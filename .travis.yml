@@ -17,8 +17,10 @@ jobs:
   include:
     - stage: Building and running Geoserver-Setup container
       script:
-        - docker build -t vcity:Geoserver-Setup geoserver-setup-context
-        - travis_wait 2 docker run -t vcity:Geoserver-Setup
+        - docker build geoserver-setup-context -t geoserver-setup --build-arg GEOSERVER_DATA_GITHUB_REPOSITORY=https://github.com/VCityTeam/Geoserver-Setup-docker --build-arg GEOSERVER_DATA_GITHUB_REPOSITORY_NAME=Geoserver-Setup-docker --build-arg GEOSERVER_DATA_IMPORT_DIR=Example/data_import
+        # Running the container would require a Geoserver to be up
+        # and properly configured. Run time testing is realized with
+        # the docker-compose example (refer below)
     - stage: Building and running docker-compose
       script:
         - |
