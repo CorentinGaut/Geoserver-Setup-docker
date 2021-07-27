@@ -12,7 +12,7 @@ services:
 
   geoserver-setup:
     build:
-      context: ../../Docker/GeoserverSetup/geoserver-setup-context
+      context: ../geoserver-setup-context
       args:
         GEOSERVER_DATA_GITHUB_REPOSITORY: ${GEOSERVER_DATA_GITHUB_REPOSITORY}
         GEOSERVER_DATA_GITHUB_REPOSITORY_NAME: ${GEOSERVER_DATA_GITHUB_REPOSITORY_NAME}

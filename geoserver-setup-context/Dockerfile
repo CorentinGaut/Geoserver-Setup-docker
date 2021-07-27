@@ -11,8 +11,11 @@ ENV GEOSERVER_DATA_IMPORT_DIR=${GEOSERVER_DATA_IMPORT_DIR}
 
 ENV DATA_IMPORT_DIR=./data_import
 
-COPY requirements.txt ./
-COPY python_setup.py ./
+RUN git clone https://github.com/VCityTeam/Geoserver-Setup.git
+
+RUN cp -r Geoserver-Setup /Geoserver-Setup
+
+WORKDIR /Geoserver-Setup
 
 RUN pip install --no-cache-dir -r requirements.txt
 
