@@ -21,7 +21,8 @@ This docker is used to upload data to your geoserver. It takes all the shapefile
 
 Use the [Dockerfile](geoserver-setup-context/Dockerfile) provided within the geoserver-setup-context directory e.g. with
 the following commands :
-```
+
+```bash
 docker build geoserver-setup-context -t geoserver-setup 
 --build-arg GEOSERVER_DATA_GITHUB_REPOSITORY=<Your_Github_Data_Repo>
 --build-arg GEOSERVER_DATA_GITHUB_REPOSITORY_NAME=<Your_Github_Data_Repo_Name>
@@ -32,12 +33,14 @@ docker run --env-file ./Example/.env geoserver-setup
 For the setup to function properly, you will need to configure several variables to access your geoserver.
 Please refer to the [Geoserver setup section of the example .env file](./Example/.env) for the complete list of environment variables available and what they are used for.
 To modify the content of these variables, you first need to modify the --build-arg variables content in the build command line. See the example below :
-```
+
+```bash
 docker build geoserver-setup-context -t geoserver-setup 
 --build-arg GEOSERVER_DATA_GITHUB_REPOSITORY=https://github.com/VCityTeam/UD-Reproducibility 
 --build-arg GEOSERVER_DATA_GITHUB_REPOSITORY_NAME=UD-Reproducibility 
 --build-arg GEOSERVER_DATA_IMPORT_DIR=Demos/DatAgora_PartDieu/data_import
 ```
+
 See [this page](https://docs.docker.com/engine/reference/commandline/build/#set-build-time-variables---build-arg) for further instructions.
 
 For all the other variables shown in the geoserver setup section, you can directly change their value in the .env file.
@@ -46,18 +49,22 @@ For all the other variables shown in the geoserver setup section, you can direct
 
 ### Linting the python source
 In order to apply the coding style
-```
+
+```bash
 $ virtualenv -p python3 venv
 $ source venv/bin/activate
 (venv) pip install -r requirements.tx
 ```
+
 The manual application of pylint is done with
-```
+
+```bash
 (venv) pylint python_setup.py
 ```
 
 ### For direnv users
-```
+
+```bash
 ln -s .envrc.tpl .envrc
 $ direnv allow
 (venv)
