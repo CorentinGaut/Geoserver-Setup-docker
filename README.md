@@ -43,7 +43,7 @@ docker build geoserver-setup-context -t geoserver-setup
 
 See [this page](https://docs.docker.com/engine/reference/commandline/build/#set-build-time-variables---build-arg) for further instructions.
 
-For all the other variables shown in the geoserver setup section, you can directly change their value in the .env file.
+For all the other variables shown in the geoserver setup section, you can directly [set them in the docker run command or use an env file](https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file).
 
 ## Developers
 
