@@ -17,7 +17,7 @@ This docker is used to upload data to your geoserver. It takes all the shapefile
 - Build and launch your docker-compose.
 - Access your geoserver, you should now be able to see the newly added layers.
 
-### using docker (if you already havea geoserver installed)
+### using docker (if you already have a geoserver installed)
 
 Use the [Dockerfile](geoserver-setup-context/Dockerfile) provided within the geoserver-setup-context directory e.g. with
 the following commands :
